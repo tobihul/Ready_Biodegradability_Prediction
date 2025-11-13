@@ -21,21 +21,19 @@ docker pull tobiashulleman/biodeg_pred_repo:latest
 Mount a local folder with your input file into the container and run the model:
 
 ```bash
-docker run --rm -v "/path/to/your/folder":/app/out \
-    tobiashulleman/biodeg_pred_repo:latest SMILES "your_smiles.csv"
+docker run --rm -v "/path/to/your/folder":/app/out tobiashulleman/biodeg_pred_repo:latest SMILES "your_smiles.csv"
+
 ```
 or using a single SMILES string
 
 ```bash
-docker run --rm -v "/path/to/your/folder":/app/out \
-    tobiashulleman/biodeg_pred_repo:latest SMILES "CCO"
+docker run --rm -v "/path/to/your/folder":/app/out \tobiashulleman/biodeg_pred_repo:latest SMILES "CCO"
 ```
 
 or multiple SMILES
 
 ```bash
-docker run --rm -v "/path/to/your/folder":/app/out \
-    tobiashulleman/biodeg_pred_repo:latest SMILES "CCO,CCCl"
+docker run --rm -v "/path/to/your/folder":/app/out \tobiashulleman/biodeg_pred_repo:latest SMILES "CCO,CCCl"
 ```
 * /path/to/your/folder → replace with the folder on your computer that has your SMILES file.
 * your_smiles.csv → the input CSV file containing SMILES.
