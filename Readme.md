@@ -46,7 +46,7 @@ docker run --rm -v "/path/to/your/folder":/app/out tobiashulleman/biodeg_pred_re
 docker run --rm -v "/path/to/your/folder":/app/out tobiashulleman/biodeg_pred_repo:latest CNL "your_spectra.msp"
 ```
 * /path/to/your/folder → replace with the folder on your computer that has your .msp file.
-* your_spectra.ms → the input .msp MS2 data file
+* your_spectra.msp → the input .msp MS2 data file
 * Output will be saved back into the same folder.
 
 ## Run MS2 spectra in a .csv file
