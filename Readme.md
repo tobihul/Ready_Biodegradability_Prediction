@@ -8,9 +8,9 @@ It is important to note that the model specifically predicts if a substance is p
 
 First, make sure you have [Docker installed](https://docs.docker.com/get-docker/).
 
-Then pull the image from Docker Hub
+Open a **command line tool** (e.g. *Command Prompt* or *PowerShell* on Windows, or *Terminal* on macOS/Linux) to run any of the commands.
 
-Open a **command line tool** (e.g. *Command Prompt* or *PowerShell* on Windows, or *Terminal* on macOS/Linux) and run one of the following commands:
+Then pull the image from Docker Hub
 
 ```bash
 docker pull tobiashulleman/biodeg_pred_repo:latest
