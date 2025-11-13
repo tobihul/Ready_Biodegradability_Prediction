@@ -16,10 +16,9 @@ docker pull tobiashulleman/biodeg_pred_repo:latest
 
 ## Running the model 
 
-Replace the example paths below with:
-- **`/path/to/your/folder`** → the folder on your computer that contains your input CSV file  
-- **`your_smiles.csv`** → the name of your input file (must be inside that folder)  
-- **`CCO`** → replace with any SMILES string if you want to predict just one compound
+* /path/to/your/folder → replace with the folder on your computer that has your SMILES file.
+* your_smiles.csv → the input CSV file containing SMILES.
+* Output will be saved back into the same folder.
 
 ### Run with a SMILES CSV file
 
@@ -32,23 +31,19 @@ docker run --rm -v "/path/to/your/folder":/app/out tobiashulleman/biodeg_pred_re
 or using a single SMILES string
 
 ```bash
-docker run --rm -v "/path/to/your/folder":/app/out \tobiashulleman/biodeg_pred_repo:latest SMILES "CCO"
+docker run --rm -v "/path/to/your/folder":/app/out tobiashulleman/biodeg_pred_repo:latest SMILES "CCO"
 ```
 
 or multiple SMILES
 
 ```bash
-docker run --rm -v "/path/to/your/folder":/app/out \tobiashulleman/biodeg_pred_repo:latest SMILES "CCO,CCCl"
+docker run --rm -v "/path/to/your/folder":/app/out tobiashulleman/biodeg_pred_repo:latest SMILES "CCO,CCCl"
 ```
-* /path/to/your/folder → replace with the folder on your computer that has your SMILES file.
-* your_smiles.csv → the input CSV file containing SMILES.
-* Output will be saved back into the same folder.
 
 ## Run MS2 spectra in a .msp file
 
 ```bash
-docker run --rm -v "/path/to/your/folder":/app/out \
-    tobiashulleman/biodeg_pred_repo:latest CNL "your_spectra.msp"
+docker run --rm -v "/path/to/your/folder":/app/out tobiashulleman/biodeg_pred_repo:latest CNL "your_spectra.msp"
 ```
 * /path/to/your/folder → replace with the folder on your computer that has your .msp file.
 * your_spectra.ms → the input .msp MS2 data file
@@ -57,8 +52,7 @@ docker run --rm -v "/path/to/your/folder":/app/out \
 ## Run MS2 spectra in a .csv file
 
 ```bash
-docker run --rm -v "C:\Users\YourName\Downloads":/app/out \
-    tobiashulleman/biodeg_pred_repo:latest SMILES "molecules.csv"
+docker run --rm -v "C:\Users\YourName\Downloads":/app/out tobiashulleman/biodeg_pred_repo:latest SMILES "molecules.csv"
 ```
 
 ## Notes
@@ -68,5 +62,7 @@ docker run --rm -v "C:\Users\YourName\Downloads":/app/out \
 * Always mount the folder containing the input file, not just the file itself.
 
 * The output file will be saved in the same folder you mounted.
+
+* There are example files for testing in this repository: SMILES.csv, 20230125000001.msp, MoNA-export-Human_Plasma_Quant.msp and mzspec_GNPS_GNPS-LIBRARY_accession_CCMSLIB00016390013.csv.
 
 
