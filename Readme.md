@@ -16,6 +16,11 @@ docker pull tobiashulleman/biodeg_pred_repo:latest
 
 ## Running the model 
 
+Replace the example paths below with:
+- **`/path/to/your/folder`** → the folder on your computer that contains your input CSV file  
+- **`your_smiles.csv`** → the name of your input file (must be inside that folder)  
+- **`CCO`** → replace with any SMILES string if you want to predict just one compound
+
 ### Run with a SMILES CSV file
 
 Mount a local folder with your input file into the container and run the model:
