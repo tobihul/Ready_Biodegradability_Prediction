@@ -9,7 +9,7 @@ youden = 0.5423759954672558
 
 cnl_fp_headers = CSV.read("CNL_Headers.csv", DataFrame)[:,1]
 
-# --- parsing function ---
+#Function to parse any msp file into readable inputs for the model
 function parse_msp_simple(file::String)
     spectra = []
     entry_id = 0
@@ -63,7 +63,7 @@ function parse_msp_simple(file::String)
     return spectra
 end
 
-# --- fragment → CNL vector ---
+#Fragments to CNL funtion from Viktoriia
 function frags_to_cnls_vec(MZ_prec_ion, MZ_frags, cnl_fp_headers)
     tolerance = 0.01
     cnls = MZ_prec_ion .- MZ_frags
@@ -73,7 +73,7 @@ function frags_to_cnls_vec(MZ_prec_ion, MZ_frags, cnl_fp_headers)
 end
 
 
-# --- main logic ---
+#Main prediction function
 if abspath(PROGRAM_FILE) == @__FILE__
     if length(ARGS) < 1
         println("Usage: julia CNL_pred.jl spectrum.msp [output.csv]")
