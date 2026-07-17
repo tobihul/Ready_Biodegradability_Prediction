@@ -99,7 +99,7 @@ if abspath(PROGRAM_FILE) == @__FILE__
         proba_pred = ScikitLearn.predict_proba(rf_CNL,(CNLs))[:,2]
         max_probas = [maximum(row) for row in eachrow(ScikitLearn.predict_proba(rf_CNL,(CNLs)))]
         IDs = [entry[:name] for entry in parsed_file]
-        predictions = map(p -> p >= youden ? 1 : 0, proba_pred)
+        predictions = map(p -> p >= youden ? "Persistent" : "Not persistent", proba_pred)
 
         CNL_pred = DataFrame(NAME = IDs, Persistence = predictions, Probability = max_probas)
 
@@ -122,9 +122,9 @@ if abspath(PROGRAM_FILE) == @__FILE__
         prediction = map(p -> p >= youden ? 1 : 0, proba_pred)
 
         if prediction[1] == 1
-            Persistence = "persistent"
+            Persistence = "Persistent"
         else
-            Persistence = "non-persistent"
+            Persistence = "Non-persistent"
         end
 
         println(">>> The query chemical is predicted as $Persistence (prob = $(max_probas[1]))")
