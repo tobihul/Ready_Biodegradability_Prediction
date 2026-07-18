@@ -75,7 +75,7 @@ function main_SMILES(input_arg::String)
 
     optimal_threshold = 0.46329756296676594
 
-    RB_pred = map(p -> p >= optimal_threshold ? 1 : 0, RB_proba)
+    RB_pred = map(p -> p >= optimal_threshold ? "Persistent" : "Not persistent", RB_proba)
     
     max_probas_RB = [maximum(row) for row in eachrow(ScikitLearn.predict_proba(rf,(Model_matrix_np)))]
 
